@@ -1,16 +1,19 @@
-import './App.css'
-import { Button } from './components/ui/button'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Dashboard from "./components/pages/Dashboard";
 
 function App() {
-  
+  const appRouter = createBrowserRouter([
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
+    },
+    
+  ]);
   return (
-    <>
-      <h1 className='text-6xl font-black'>
-        Muhammad Wasif
-        <Button>Muhammad</Button>
-      </h1>
-    </>
-  )
+    <div>
+      <RouterProvider router={appRouter} />
+    </div>
+  );
 }
 
-export default App
+export default App;
